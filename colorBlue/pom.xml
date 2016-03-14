@@ -22,7 +22,7 @@
           <instructions>
             <Export-Package>sp.drm.util</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
-            <Bundle-Activator>sp.drm.Activator</Bundle-Activator>
+            <Bundle-Activator>sp.drm.colorBlue.Activator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>
