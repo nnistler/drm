@@ -4,7 +4,7 @@
   <groupId>sp.drm</groupId>
   <artifactId>ServiceIF</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>ServiceIF</name>
   <description>Interfaces for services</description>
   <properties>
@@ -21,7 +21,7 @@
         <configuration>
           <instructions>
             <Export-Package>sp.drm.util</Export-Package>
-            <Export-Package>sp.drm.ColorIF</Export-Package>
+            <Export-Package>sp.drm.ServicesIF.ColorIF</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
           </instructions>
         </configuration>
