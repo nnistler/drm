@@ -8,7 +8,6 @@ import org.osgi.framework.ServiceReference;
 import sp.drm.colorBlue.BlueFactory;
 import sp.drm.colorBlue.Blue;
 import java.util.Hashtable;
-import sp.drm.ServiceIF.ColorIF;
 
 public class Activator implements BundleActivator {
 	

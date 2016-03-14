@@ -6,7 +6,7 @@ import javax.swing.JPanel;
 import java.awt.Graphics;
 import java.awt.event.WindowEvent;
 import java.awt.Color;
-import sp.drm.ServiceIF.ColorIF;
+import sp.drm.ServicesIF.ColorIF;
 
 @SuppressWarnings("serial")
 public class Blue extends JPanel implements ColorIF
