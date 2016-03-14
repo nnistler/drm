@@ -20,6 +20,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Import-Package>sp.drm.ServiceIF.ColorIF</Import-Package>
             <Export-Package>sp.drm.util</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
             <Bundle-Activator>sp.drm.colorBlue.Activator</Bundle-Activator>
@@ -68,5 +69,14 @@
       <artifactId>cm-API</artifactId>
       <version>3.0.1</version>
     </dependency>
+    <!--
+    <dependency>
+      <groupId>Service-1.0-SNAPSHOT</groupId>
+      <artifactId>sp.drm.SeviceIF.ColorIF</artifactId>
+      <version>1.0</version>
+      <scope>system</scope>
+      <systemPath>C:\Users\The\ King\Documents\GitHub\drm-1\Service-1.0-SNAPSHOT.jar</systemPath>
+    </dependency>
+    -->
   </dependencies>
 </project>
