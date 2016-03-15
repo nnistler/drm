@@ -20,7 +20,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Import-Package>sp.drm.ServicesIF.ColorIF</Import-Package>
+            <Import-Package>sp.drm.ServicesIF.ColorIF,org.osgi.framework</Import-Package>
             <Export-Package>sp.drm.util</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
             <Bundle-Activator>sp.drm.colorBlue.Activator</Bundle-Activator>
@@ -74,7 +74,7 @@
       <artifactId>ServiceIF</artifactId>
       <version>1.0.0</version>
       <scope>system</scope>
-      <systemPath>C:\Users\The King\Documents\GitHub\drm-1\ServiceIF\target\ServiceIF-1.0.0.jar</systemPath>
+      <systemPath>C:\Users\Samuel Tobey\Desktop\Fall 2015\csci_4308_senior_project\drm\ServiceIF\target\ServiceIF-1.0.0.jar</systemPath>
     </dependency>
   </dependencies>
 </project>
