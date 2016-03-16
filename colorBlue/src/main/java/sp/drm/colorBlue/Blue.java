@@ -12,11 +12,19 @@ import sp.drm.ServicesIF.ColorIF;
 public class Blue extends JPanel implements ColorIF
 {
 	private JFrame frame = null;
+	private Color rgbaVal;
 	public Blue() 
 	{
+		
 		super();
+		rgbaVal = new Color(0,0,255);
+
 		// Blue
-		setBackground(new Color(0,0,255));
+		setBackground(rgbaVal);
+	}
+	
+	public Color getColor(){
+		return this.rgbaVal;
 	}
 	
 	public void paintComponent(Graphics graphics) {
