@@ -10,6 +10,8 @@ import sp.drm.colorRed.RedFactory;
 
 import java.util.Hashtable;
 
+import sp.drm.ServicesIF.*;
+
 public class Activator implements BundleActivator {
 	
 	public static BundleContext bundleContext = null;
@@ -21,9 +23,9 @@ public class Activator implements BundleActivator {
 		log("started");
 		ServiceFactory serviceFactory = new RedFactory();
 		bundleContext.registerService(
-				Red.class.getName(),serviceFactory,new Hashtable<String,String>());
+				ColorIF.class.getName(),serviceFactory,new Hashtable<String,String>());
 		
-		ServiceReference ref = bundleContext.getServiceReference(Red.class.getName());
+		ServiceReference ref = bundleContext.getServiceReference(ColorIF.class.getName());
 		colorService = (Red) bundleContext.getService(ref);
 		
 		if(colorService != null) {
