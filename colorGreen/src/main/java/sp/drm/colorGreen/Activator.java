@@ -4,8 +4,8 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceFactory;
 import org.osgi.framework.ServiceReference;
+import org.osgi.framework.Constants;
 
-import sp.drm.colorGreen.Green;
 import sp.drm.colorGreen.GreenFactory;
 
 import java.util.Hashtable;
@@ -15,7 +15,7 @@ import sp.drm.ServicesIF.*;
 public class Activator implements BundleActivator {
 	
 	public static BundleContext bundleContext = null;
-	private Green colorService = null;
+	private ColorIF colorService = null;
 	
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.bundleContext = bundleContext;
@@ -26,7 +26,8 @@ public class Activator implements BundleActivator {
 				ColorIF.class.getName(),serviceFactory,new Hashtable<String,String>());
 		
 		ServiceReference ref = bundleContext.getServiceReference(ColorIF.class.getName());
-		colorService = (Green) bundleContext.getService(ref);
+		log("OBJECTCLASS: " + Constants.OBJECTCLASS);
+		colorService = (ColorIF) bundleContext.getService(ref);
 		
 		if(colorService != null) {
 			colorService.draw();
@@ -40,6 +41,6 @@ public class Activator implements BundleActivator {
 	}
 	
 	public void log(String message) {
-		System.out.println("colorRed: " + message + ".");
+		System.out.println("colorGreen: " + message + ".");
 	}
 }
