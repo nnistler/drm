@@ -13,7 +13,7 @@ public class DateServiceActivator implements BundleActivator {
 		System.out.println("Started " + bundleName);
 		Object obj = bc.getService(bc.getServiceReference(DependencyResolver.class.getName()));
 		System.out.println(obj.getClass().getName());
-		ClientDependencyResolver cdr = (ClientDependencyResolver) obj;
+		DependencyResolver cdr = (DependencyResolver) obj;
 		final CalendarService clock = cdr.getService(CalendarService.class);
 		Thread t = new Thread(new Runnable() {
 			public void run() {

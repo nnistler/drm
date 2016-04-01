@@ -20,6 +20,7 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
+            <Import-Package>org.osgi.framework,sp.drm.interfaces</Import-Package>
             <Private-Package>sp.drm.*</Private-Package>
             <Bundle-Activator>sp.drm.ClockServiceActivator</Bundle-Activator>
           </instructions>
@@ -68,9 +69,9 @@
       <version>3.0.1</version>
     </dependency>
     <dependency>
-    	<groupId>sp.drm</groupId>
-    	<artifactId>cdresolver</artifactId>
-    	<version>1.0-SNAPSHOT</version>
+      <groupId>sp.drm</groupId>
+      <artifactId>ServiceIF</artifactId>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
 </project>
