@@ -17,7 +17,7 @@ public class Activator implements BundleActivator {
 		Activator.bundleContext = bundleContext;
 		log("Starting");
 		ServiceTrackerCustomizer customizer = 
-				new ColorTrackerCustomizer(Activator.bundleContext);
+				new ColorTrackerCustomizer<ColorIF,ColorIF>(Activator.bundleContext);
 		colortracker = new ServiceTracker(bundleContext, ColorIF.class.getName(),customizer);
 		colortracker.open();
 	}

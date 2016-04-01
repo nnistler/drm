@@ -7,7 +7,7 @@ import org.osgi.util.tracker.ServiceTrackerCustomizer;
 
 import sp.drm.ServicesIF.ColorIF;
 
-public class ColorTrackerCustomizer implements ServiceTrackerCustomizer{
+public class ColorTrackerCustomizer<ColoIF,ColorIF> implements ServiceTrackerCustomizer{
 
 	private final BundleContext bundleContext;
 	
@@ -17,7 +17,7 @@ public class ColorTrackerCustomizer implements ServiceTrackerCustomizer{
 	
 	public Object addingService(ServiceReference serviceReference) {
 		log("Adding Color Service");
-		ColorIF colorService = (ColorIF) bundleContext.getService(serviceReference);
+		Object colorService = bundleContext.getService(serviceReference);
 		return colorService;
 	}
 
@@ -33,7 +33,7 @@ public class ColorTrackerCustomizer implements ServiceTrackerCustomizer{
 	private void log(String message) {
 		System.out.println(bundleContext.getBundle().
 				getHeaders().get(Constants.BUNDLE_NAME)
-				+ "-- tracker: " + message + ".");
+				+ "-- Service Tracker: " + message + ".");
 	}
 
 }
