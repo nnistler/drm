@@ -13,7 +13,7 @@ import org.osgi.framework.ServiceReference;
 
 import sp.drm.interfaces.DependencyResolver;
 
-public class ClientDependencyResolver implements DependencyResolver{
+public class ClientDependencyResolver implements DependencyResolver {
 	private final BundleContext bc;
 
 	public ClientDependencyResolver(BundleContext bc) {

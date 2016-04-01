@@ -20,7 +20,8 @@
         <extensions>true</extensions>
         <configuration>
           <instructions>
-            <Export-Package>sp.drm,sp.drm.interfaces</Export-Package>
+            <Import-Package>org.osgi.framework,sp.drm.interfaces</Import-Package>
+            <Export-Package>sp.drm</Export-Package>
             <Bundle-Activator>sp.drm.Activator</Bundle-Activator>
           </instructions>
         </configuration>
@@ -66,6 +67,11 @@
       <groupId>org.knopflerfish.bundle</groupId>
       <artifactId>cm-API</artifactId>
       <version>3.0.1</version>
+    </dependency>
+    <dependency>
+      <groupId>sp.drm</groupId>
+      <artifactId>ServiceIF</artifactId>
+      <version>1.0.0</version>
     </dependency>
   </dependencies>
 </project>
