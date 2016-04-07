@@ -12,6 +12,7 @@
     <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
   </properties>
   <build>
+    <defaultGoal>clean install bundle:bundle</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.apache.felix</groupId>
