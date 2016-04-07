@@ -12,6 +12,7 @@
     <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
   </properties>
   <build>
+    <defaultGoal>clean install bundle:bundle</defaultGoal>
     <plugins>
       <plugin>
         <groupId>org.apache.felix</groupId>
@@ -73,8 +74,6 @@
       <groupId>sp.drm</groupId>
       <artifactId>ServiceIF</artifactId>
       <version>1.0.0</version>
-      <scope>system</scope>
-      <systemPath>C:\Users\Samuel Tobey\Desktop\Fall 2015\csci_4308_senior_project\drm\ServiceIF\target\ServiceIF-1.0.0.jar</systemPath>
     </dependency>
   </dependencies>
 </project>
