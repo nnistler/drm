@@ -9,18 +9,17 @@ import java.awt.Color;
 import sp.drm.ServicesIF.ColorIF;
 
 @SuppressWarnings("serial")
-public class ColorMixer extends JPanel implements ColorIF
+public class Green extends JPanel implements ColorIF
 {
 	private JFrame frame = null;
 	private Color rgbaVal;
-	public ColorMixer() 
+	public Green() 
 	{
 		
 		super();
-		frame = new JFrame();
-		rgbaVal = new Color(0,0,0);
+		rgbaVal = new Color(0,255,0);
 
-		this.setBackground(rgbaVal);
+		setBackground(rgbaVal);
 	}
 	
 	public Color getColor(){
@@ -31,18 +30,12 @@ public class ColorMixer extends JPanel implements ColorIF
 		super.paintComponent(graphics);
 	}
 
-	public void mix(ColorIF c1, ColorIF c2) {
-		int r = (c1.getColor().getRed() + c2.getColor().getRed()) / 2;
-		int g = (c1.getColor().getGreen() + c2.getColor().getGreen()) / 2;
-		int b = (c1.getColor().getBlue() + c2.getColor().getBlue()) / 2;
-		rgbaVal = new Color(r,g,b);
-		this.setBackground(rgbaVal);
-	}
-	
 	public void draw()
 	{
+		frame = new JFrame();
+		Green window = new Green();
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.add(this);
+		frame.add(window);
 		frame.setSize(1280,720);
 		frame.setVisible(true);
 	}
