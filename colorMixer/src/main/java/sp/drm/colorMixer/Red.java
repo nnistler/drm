@@ -18,8 +18,9 @@ public class Red extends JPanel implements ColorIF
 		
 		super();
 		rgbaVal = new Color(255,0,0);
+		frame = new JFrame();
 
-		setBackground(rgbaVal);
+		this.setBackground(rgbaVal);
 	}
 	
 	public Color getColor(){
@@ -32,10 +33,8 @@ public class Red extends JPanel implements ColorIF
 
 	public void draw()
 	{
-		frame = new JFrame();
-		Red window = new Red();
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.add(window);
+		frame.add(this);
 		frame.setSize(1280,720);
 		frame.setVisible(true);
 	}

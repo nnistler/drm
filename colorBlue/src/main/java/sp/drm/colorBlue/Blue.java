@@ -18,9 +18,9 @@ public class Blue extends JPanel implements ColorIF
 		
 		super();
 		rgbaVal = new Color(0,0,255);
+		frame = new JFrame();
 
-		// Blue
-		setBackground(rgbaVal);
+		this.setBackground(rgbaVal);
 	}
 	
 	public Color getColor(){
@@ -33,10 +33,8 @@ public class Blue extends JPanel implements ColorIF
 
 	public void draw()
 	{
-		frame = new JFrame();
-		Blue window = new Blue();
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		frame.add(window);
+		frame.add(this);
 		frame.setSize(1280,720);
 		frame.setVisible(true);
 	}
