@@ -22,8 +22,7 @@
         <configuration>
           <instructions>
             <Export-Package>sp.drm.util</Export-Package>
-            <Export-Package>sp.drm.ServicesIF.ColorIF</Export-Package>
-            <Export-Package>sp.drm.interfaces</Export-Package>
+            <Export-Package>sp.drm.ServicesIF.ColorIF,sp.drm.interfaces</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
           </instructions>
         </configuration>
