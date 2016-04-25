@@ -23,6 +23,7 @@
             <Import-Package>org.osgi.framework,javax.swing</Import-Package>
             <Export-Package>sp.drm.ColorsIF</Export-Package>
             <Private-Package>sp.drm.*</Private-Package>
+            <Bundle-Activator>sp.drm.ColorsIF.ColorsActivator</Bundle-Activator>
           </instructions>
         </configuration>
       </plugin>

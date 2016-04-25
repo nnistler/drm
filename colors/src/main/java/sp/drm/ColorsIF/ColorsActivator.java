@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
@@ -96,13 +97,10 @@ public class ColorsActivator implements BundleActivator {
 			ServiceReference[] pref2 = getServiceReferences("(color=R)");
 			ColorsIF pService2 = getService(pref2);
 			mixer.mix(pService1, pService2);
-			mixer.draw();
-			// drawDemo(pService1, pService2);
+			drawDemo(pService1, pService2);
 		    } catch (InvalidSyntaxException e1) {
 			e1.printStackTrace();
-		    } // catch (InterruptedException e1) {
-		      // e1.printStackTrace();
-		      // }
+		    }
 		} else if (answer.getText().equals("Yellow")) {
 		    log("green selected");
 		    try {
@@ -111,13 +109,10 @@ public class ColorsActivator implements BundleActivator {
 			ServiceReference[] yref2 = getServiceReferences("(color=R)");
 			ColorsIF yService2 = getService(yref2);
 			mixer.mix(yService1, yService2);
-			mixer.draw();
-			// drawDemo(gService1, gService2);
+			drawDemo(yService1, yService2);
 		    } catch (InvalidSyntaxException e1) {
 			e1.printStackTrace();
-		    } // catch (InterruptedException e1) {
-		      // e1.printStackTrace();
-		      // }
+		    }
 		} else if (answer.getText().equals("Orange")) {
 		    log("orange selected");
 		    try {
@@ -126,13 +121,10 @@ public class ColorsActivator implements BundleActivator {
 			ServiceReference[] oref2 = getServiceReferences("(color=Y)");
 			ColorsIF oService2 = getService(oref2);
 			mixer.mix(oService1, oService2);
-			mixer.draw();
-			// drawDemo(oService1, oService2);
+			drawDemo(oService1, oService2);
 		    } catch (InvalidSyntaxException e1) {
 			e1.printStackTrace();
-		    } // catch (InterruptedException e1) {
-		      // e1.printStackTrace();
-		      // }
+		    }
 		}
 		jf.setVisible(false);
 	    }
@@ -161,18 +153,21 @@ public class ColorsActivator implements BundleActivator {
 	return (ColorMixer) bundleContext.getService(mixerRef);
     }
 
-    private void drawDemo(ColorsIF s1, ColorsIF s2) throws InterruptedException {
+    private void drawDemo(ColorsIF s1, ColorsIF s2) {
 	s1.draw();
-	Thread.sleep(2000);
 	s2.draw();
-	Thread.sleep(2000);
-	mixer.draw();
-	Thread.sleep(3000);
-	mixer.close();
-	Thread.sleep(2000);
-	s2.close();
-	Thread.sleep(2000);
-	s1.close();
+	SwingUtilities.invokeLater(new Runnable() {
+
+	    public void run() {
+		try {
+		    Thread.sleep(1500);
+		} catch (InterruptedException e) {
+		    e.printStackTrace();
+		}
+		mixer.draw();
+
+	    }
+	});
     }
 
     private void log(String message) {

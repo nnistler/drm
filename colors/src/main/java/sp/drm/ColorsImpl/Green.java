@@ -35,6 +35,7 @@ public class Green extends JPanel implements ColorsIF {
 	frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	frame.add(this);
 	frame.setTitle("Yellow");
+	frame.setLocationRelativeTo(null);
 	frame.setSize(960, 540);
 	frame.setVisible(true);
     }
